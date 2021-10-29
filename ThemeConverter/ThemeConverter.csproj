@@ -76,9 +76,6 @@
     <Content Include="Tools\ThemeConverter.exe">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Tools\ThemeConverter.pdb">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="..\LICENSE">
       <Link>Resources\LICENSE</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
