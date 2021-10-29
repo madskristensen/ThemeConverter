@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="ThemeConverter">
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="ThemeConverter" id="MyCommand" priority="0x0100" type="Button">
+        <Parent guid="VSMainMenu" id="Node.IncludeExcludeGroup" />
+        <Icon guid="ImageCatalogGuid" id="ColorPalette" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Convert to Visual Studio Theme</ButtonText>
+          <LocCanonicalName>.ThemeConverter.AddCustomTool</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <VisibilityConstraints>
+    <VisibilityItem guid="ThemeConverter" id="MyCommand" context="Visibility" />
+  </VisibilityConstraints>
+
+  <Symbols>
+    <GuidSymbol name="Visibility" value="{9c1e2f4b-fce1-4181-8173-31f5d9df73e5}"/>
+    <GuidSymbol name="ThemeConverter" value="{9c1e2f4b-fce1-4181-8173-31f5d9df73e4}">
+      <IDSymbol name="MyMenuGroup" value="0x0001" />
+      <IDSymbol name="MyCommand" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
