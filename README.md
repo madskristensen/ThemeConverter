@@ -9,7 +9,9 @@ or try the
 
 ---------------------------------------
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8yq7XilKaLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hood
+
+[![Video](art/video%20poster.png)](https://https://www.youtube.com/watch?v=8yq7XilKaLE&list=PLReL099Y5nRdz9jvxuy_LgHFKowkx8tS4&index=8)
 
 ## License
 [Apache 2.0](LICENSE)
