@@ -11,7 +11,7 @@ or try the
 
 A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hood
 
-[![Video](art/video%20poster.png)](https://https://www.youtube.com/watch?v=8yq7XilKaLE&list=PLReL099Y5nRdz9jvxuy_LgHFKowkx8tS4&index=8)
+[![Video](art/video%20poster.png)](https://www.youtube.com/watch?v=8yq7XilKaLE&list=PLReL099Y5nRdz9jvxuy_LgHFKowkx8tS4&index=8)
 
 ## License
 [Apache 2.0](LICENSE)
