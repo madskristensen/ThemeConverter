@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31828.382
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeConverter", "ThemeConverter\ThemeConverter.csproj", "{536AC885-EFA9-4510-AB88-B353757EB763}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeConverter", "src\ThemeConverter.csproj", "{536AC885-EFA9-4510-AB88-B353757EB763}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92C4121B-D1E7-431D-812C-838E45E7F740}"
 	ProjectSection(SolutionItems) = preProject
