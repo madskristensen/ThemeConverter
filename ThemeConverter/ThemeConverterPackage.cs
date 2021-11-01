@@ -4,6 +4,7 @@ global using Microsoft.VisualStudio.Shell;
 global using Task = System.Threading.Tasks.Task;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.TextTemplating.VSHost;
 
 namespace ThemeConverter
@@ -13,12 +14,13 @@ namespace ThemeConverter
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.ThemeConverterString)]
     [ProvideCodeGenerator(typeof(ThemeConverter), ThemeConverter.Name, ThemeConverter.Description, true, RegisterCodeBase = true)]
-    //[ProvideCodeGeneratorExtension(ThemeConverter.Name, ".jsonc", ProjectSystem = ProjectTypes.EXTENSIBILITY)]
+    [ProvideCodeGeneratorExtension(ThemeConverter.Name, ".jsonc", ProjectSystem = ProjectTypes.EXTENSIBILITY)]
     [ProvideUIContextRule(PackageGuids.VisibilityString,
         name: "JSONC",
         expression: "JSONC",
         termNames: new[] { "JSONC" },
         termValues: new[] { "HierSingleSelectionName:.jsonc?$" })]
+    [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
     public sealed class ThemeConverterPackage : ToolkitPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)

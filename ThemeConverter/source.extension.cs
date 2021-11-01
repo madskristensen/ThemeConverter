@@ -11,7 +11,7 @@ namespace ThemeConverter
         public const string Name = "VSCode Theme Converter";
         public const string Description = @"A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hood";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.0.88";
         public const string Author = "Mads Kristensen";
         public const string Tags = "vsix, themes";
     }
