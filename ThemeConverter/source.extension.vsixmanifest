@@ -2,8 +2,8 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="ThemeConverter.df309c71-fe30-4f88-bf07-d73fbc24fd11" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
-        <DisplayName>Theme Converter</DisplayName>
-        <Description xml:space="preserve">A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hoodA super easy way to convert </Description>
+        <DisplayName>VSCode Theme Converter</DisplayName>
+        <Description xml:space="preserve">A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hood</Description>
         <MoreInfo>https://github.com/madskristensen/ThemeConverter</MoreInfo>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>

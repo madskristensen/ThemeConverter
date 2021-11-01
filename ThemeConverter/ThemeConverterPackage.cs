@@ -13,7 +13,7 @@ namespace ThemeConverter
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.ThemeConverterString)]
     [ProvideCodeGenerator(typeof(ThemeConverter), ThemeConverter.Name, ThemeConverter.Description, true, RegisterCodeBase = true)]
-    [ProvideCodeGeneratorExtension(ThemeConverter.Name, ".jsonc", ProjectSystem = ProjectTypes.EXTENSIBILITY)]
+    //[ProvideCodeGeneratorExtension(ThemeConverter.Name, ".jsonc", ProjectSystem = ProjectTypes.EXTENSIBILITY)]
     [ProvideUIContextRule(PackageGuids.VisibilityString,
         name: "JSONC",
         expression: "JSONC",

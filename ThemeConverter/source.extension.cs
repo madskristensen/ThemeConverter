@@ -8,8 +8,8 @@ namespace ThemeConverter
     internal sealed partial class Vsix
     {
         public const string Id = "ThemeConverter.df309c71-fe30-4f88-bf07-d73fbc24fd11";
-        public const string Name = "Theme Converter";
-        public const string Description = @"A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hoodA super easy way to convert ";
+        public const string Name = "VSCode Theme Converter";
+        public const string Description = @"A super easy way to convert VS Code themes to Visual Studio using the official CLI tool under the hood";
         public const string Language = "en-US";
         public const string Version = "1.0";
         public const string Author = "Mads Kristensen";

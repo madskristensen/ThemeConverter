@@ -1,4 +1,7 @@
-﻿namespace ThemeConverter
+﻿using EnvDTE;
+using EnvDTE80;
+
+namespace ThemeConverter
 {
     [Command(PackageIds.MyCommand)]
     internal sealed class MyCommand : BaseCommand<MyCommand>
@@ -11,9 +14,15 @@
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            var jsonc = await VS.Solutions.GetActiveItemAsync() as PhysicalFile;
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            await jsonc.TrySetAttributeAsync("Custom Tool", ThemeConverter.Name);
+            DTE2 dte = await VS.GetRequiredServiceAsync<DTE, DTE2>();
+            ProjectItem item = dte.SelectedItems.Item(1)?.ProjectItem;
+
+            if (item != null)
+            {
+                item.Properties.Item("CustomTool").Value = ThemeConverter.Name;
+            }
         }
     }
 }
