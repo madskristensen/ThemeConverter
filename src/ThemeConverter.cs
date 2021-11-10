@@ -14,23 +14,35 @@ namespace ThemeConverter
         protected override byte[] GenerateCode(string inputFileName, string inputFileContent)
         {
             var tmpFolder = Path.Combine(Path.GetTempPath(), "themes");
-            PackageUtilities.EnsureOutputPath(tmpFolder);
 
-            var tmpJson = Path.Combine(tmpFolder, Path.GetFileName(inputFileName));
-            File.WriteAllText(tmpJson, CleanJson(inputFileContent));
+            try
+            {
+                PackageUtilities.EnsureOutputPath(tmpFolder);
 
-            var extDir = Path.GetDirectoryName(GetType().Assembly.Location);
-            var exe = Path.Combine(extDir, "tools", "ThemeConverter.exe");
-            var args = $"/c ThemeConverter.exe -i \"{tmpJson}\"";
+                var tmpJson = Path.Combine(tmpFolder, Path.GetFileName(inputFileName));
+                File.WriteAllText(tmpJson, CleanJson(inputFileContent));
 
-            RunExecutable(exe, args);
+                var extDir = Path.GetDirectoryName(GetType().Assembly.Location);
+                var exe = Path.Combine(extDir, "tools", "ThemeConverter.exe");
+                var args = $"/c ThemeConverter.exe -i \"{tmpJson}\"";
 
-            var pkgdef = Path.ChangeExtension(tmpJson, ".pkgdef");
-            var bytes = File.ReadAllBytes(pkgdef);
+                RunExecutable(exe, args);
 
-            Directory.Delete(tmpFolder, true);
+                var pkgdef = Path.ChangeExtension(tmpJson, ".pkgdef");
+                var bytes = File.ReadAllBytes(pkgdef);
 
-            return bytes;
+                return bytes;
+            }
+            catch (Exception ex)
+            {
+                ex.Log();
+            }
+            finally
+            {
+                Directory.Delete(tmpFolder, true);
+            }
+
+            return null;
         }
 
         public void RunExecutable(string exe, string args)

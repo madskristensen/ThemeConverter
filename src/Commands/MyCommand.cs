@@ -1,5 +1,4 @@
 ﻿using EnvDTE;
-using EnvDTE80;
 
 namespace ThemeConverter
 {
@@ -14,15 +13,8 @@ namespace ThemeConverter
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-
-            DTE2 dte = await VS.GetRequiredServiceAsync<DTE, DTE2>();
-            ProjectItem item = dte.SelectedItems.Item(1)?.ProjectItem;
-
-            if (item != null)
-            {
-                item.Properties.Item("CustomTool").Value = ThemeConverter.Name;
-            }
+            var file = await VS.Solutions.GetActiveItemAsync() as PhysicalFile;
+            await file.TrySetAttributeAsync("CustomTool", ThemeConverter.Name);
         }
     }
 }
